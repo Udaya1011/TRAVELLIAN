@@ -36,8 +36,9 @@ const BlogPostCard = () => {
         {`
 .blog-container {
   max-width: 1400px;
-  padding: 160px 70px 0 70px;
-  margin: 160px 70px 0 70px;
+    padding: 160px 70px 0 70px;
+
+  margin: 0 auto;
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
