@@ -82,6 +82,7 @@ export default function DestinationGallery() {
 
       <style>{`
         .gallery-container {
+        max-width:1400px;
           width: 100%;
           margin: 0 auto;
           font-family: 'Poppins', sans-serif;
@@ -218,5 +219,6 @@ export default function DestinationGallery() {
     </div>
   );
 }
+
 
 
