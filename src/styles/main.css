@@ -1,0 +1,282 @@
+:root {
+  --peach: #ff7c66;
+  --muted: #777;
+  --bg: #f8f8f8;
+  --container: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, "Segoe UI", Arial, sans-serif;
+  color: #111;
+  background: var(--bg);
+}
+
+.app-wrapper {
+  max-width: 1920px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+.navbar {
+  width: 100%;
+  max-height: 200px;
+  padding: 32px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  padding-left: 182px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+  list-style: none;
+  color: white;
+}
+
+.nav-links li {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.nav-links .active {
+  border-bottom: 2px solid var(--peach);
+  padding-bottom: 4px;
+}
+
+.auth-buttons button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.login {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.signup {
+  background: var(--peach);
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 34px;
+  cursor: pointer;
+  color: white;
+  position: sticky;
+}
+
+
+.hero-container {
+  height: 882px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.hero-text {
+  position: absolute;
+  top: 32%;
+  left: 8%;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.booking-box {
+  width: 85%;
+  background: white;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  padding: 28px 40px;
+  display: flex;
+  gap: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-group select,
+.form-group input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  background: transparent;
+}
+
+.book-btn {
+  background: var(--peach);
+  color: white;
+  padding: 20px 36px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+}
+
+.section {
+  padding: 120px 8%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+
+@media (max-width:768px) {
+  .navbar {
+    padding: 20px 4%;
+ 
+  }
+
+  .logo {
+    padding-left: 0;
+    font-size: 24px;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 240px;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: 80px 30px 30px 30px;
+    display: flex;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links li {
+    padding: 12px 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .nav-links .active {
+    border-bottom: 2px solid var(--peach);
+    padding-bottom: 12px;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  .hero-container {
+    min-height: 70%;
+    height: auto;
+  }
+
+  .hero-text {
+    position: static;
+    width: 92%;
+    margin: 30px auto 0 auto;
+    top: auto;
+    left: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+
+  .booking-box {
+    flex-direction: column;
+    position: static;
+    transform: none;
+    margin: 30px auto;
+    height: auto;
+    width: 94%;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 18px;
+    margin-top: 8px;
+  }
+
+  .section {
+    padding: 60px 4%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
